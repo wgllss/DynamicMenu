@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <HorizontalScrollView
+            android:id="@+id/horizon_srcoll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btn_add"
+            android:scrollbars="none" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <com.example.dynamicmenu.widget.MovieLayout
+                    android:id="@+id/movie_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/holo_green_light"
+                    android:paddingBottom="0.5dp"
+                    android:paddingTop="0.5dp" >
+
+                    <ImageView
+                        android:id="@+id/img___0"
+                        android:layout_width="80dp"
+                        android:layout_height="1dp"
+                        android:background="@android:color/holo_red_light" />
+                </FrameLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="60dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/holo_green_light"
+            android:text="添加"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:flipInterval="30"
+        android:persistentDrawingCache="animation" >
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

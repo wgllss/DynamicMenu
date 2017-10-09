@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/head_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:background="#0af"
+            android:padding="5dip" >
+
+            <Button
+                android:id="@+id/showLeft"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:background="@android:color/holo_blue_bright"
+                android:text="ShowLeft"
+                android:textColor="@android:color/black"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/showRight"
+                android:layout_toRightOf="@+id/showLeft"
+                android:gravity="center"
+                android:text="@string/app_name" />
+
+            <Button
+                android:id="@+id/showRight"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:background="@android:color/holo_blue_bright"
+                android:text="ShowRight"
+                android:textColor="@android:color/black"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <HorizontalScrollView
+                android:id="@+id/horizon_srcoll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/btn_add"
+                android:scrollbars="none" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+
+                    <com.example.dynamicmenu.widget.MovieLayout
+                        android:id="@+id/movie_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/holo_green_light"
+                        android:paddingBottom="0.5dp"
+                        android:paddingTop="0.5dp" >
+
+                        <ImageView
+                            android:id="@+id/img___0"
+                            android:layout_width="80dp"
+                            android:layout_height="1dp"
+                            android:background="@android:color/holo_red_light" />
+                    </FrameLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <Button
+                android:id="@+id/btn_add"
+                android:layout_width="60dp"
+                android:layout_height="48dp"
+                android:layout_alignParentRight="true"
+                android:background="@android:color/holo_green_light"
+                android:text="添加"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+        </android.support.v4.view.ViewPager>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/station_m"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#00000000"
+        android:visibility="gone" />
+
+</FrameLayout>
